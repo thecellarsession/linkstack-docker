@@ -6,20 +6,18 @@ services:
     hostname: 'linkstack'
     image: 'linkstackorg/linkstack:latest'
     environment:
-      TZ: 'Europe/Berlin'
-      SERVER_ADMIN: 'admin@example.com'
-      HTTP_SERVER_NAME: 'example.com'
-      HTTPS_SERVER_NAME: 'example.com'
+      TZ: 'Sydney/Australia'
+      SERVER_ADMIN: 'admin@thecellarsession.com.au'
+      HTTP_SERVER_NAME: 'thecellarsession.com.au'
+      HTTPS_SERVER_NAME: 'thecellarsession.com.au'
       LOG_LEVEL: 'info'
       PHP_MEMORY_LIMIT: '256M'
       UPLOAD_MAX_FILESIZE: '8M'
     volumes:
       - 'linkstack_data:/htdocs'
     ports:
-      - '8188:80'
       - '8190:443'
     restart: unless-stopped
 
 volumes:
   linkstack_data:
-
